@@ -139,18 +139,18 @@
 - name: armbian-bananapim2zero-trixie
   type: armbian
   build_only: True
-  img_download_url: "https://github.com/mainsail-crew/armbian-builds/releases/latest/download/armbian-bananapim2zero_trixie.img.xz"
-  img_hash_url: "https://github.com/mainsail-crew/armbian-builds/releases/latest/download/armbian-bananapim2zero_trixie.img.xz.sha256"
+  img_download_url: "https://dl.armbian.com/bananapim2zero/Trixie_current_minimal"
+  img_hash_url: "https://dl.armbian.com/bananapim2zero/Trixie_current_minimal.sha"
   env:
-    ARCH: arm64
+    ARCH: armv7l
     DISTRO: armbian
     IMAGE_ENLARGEROOT: 5000
     MOUNT_PROC: 1
     MOUNT_SYS: 1
     INIT_FORMAT: cloudinit
   rpi_json:
-    name: "MainsailOS $VERSION$ - Banana Pi M2 Zero (64-bit)"
+    name: "MainsailOS $VERSION$ - Banana Pi M2 Zero"
     description: "A port of Armbian with preinstalled Klipper/Moonraker/Mainsail for 3D printers"
     icon: "https://os.mainsail.xyz/rpi-imager.png"
     devices:
-      - "bananapim2zero-64bit"
+      - "bananapim2zero"
