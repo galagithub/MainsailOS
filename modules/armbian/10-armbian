@@ -45,7 +45,13 @@ echo "${BASE_USER} ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
 # Create groups and add user           #
 ########################################
 
-groupadd gpio
+# if gpio group exists ignore creation error code 9 (group already exists)
+groupadd gpio || {
+    rc=$?
+    if [ "$rc" -ne 9 ]; then
+        exit "$rc"
+    fi
+}
 
 if_group_exists_run i2c usermod -aG i2c "${BASE_USER}"
 usermod -aG video,audio,plugdev,games,netdev,sudo,systemd-journal,gpio "${BASE_USER}"
