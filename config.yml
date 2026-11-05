@@ -147,6 +147,7 @@
     IMAGE_ENLARGEROOT: 5000
     MOUNT_PROC: 1
     MOUNT_SYS: 1
+    ROOT_PARTITION: 1
     INIT_FORMAT: cloudinit
   rpi_json:
     name: "MainsailOS $VERSION$ - Banana Pi M2 Zero"
